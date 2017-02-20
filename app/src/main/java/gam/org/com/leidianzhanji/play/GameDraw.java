@@ -14,6 +14,7 @@ import android.graphics.Rect;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -406,6 +407,8 @@ public class GameDraw extends SurfaceView implements Runnable {
 		}
 	}
 
+
+
 	public boolean onTouchEvent(MotionEvent e) // 控制
 	{
 		float x = e.getX(), y = e.getY();
@@ -559,29 +562,57 @@ public class GameDraw extends SurfaceView implements Runnable {
 	}
 
 	public boolean keyDown(int k) {
-		if (k == KeyEvent.KEYCODE_BACK) {
-			switch (canvasIndex) {
-			case CANVAS_GET_GIFT:
-				getGift.touchDown(400, 240);
-				break;
-			case CANVAS_DAY_GIFT:
-				dayGift.touchDown(240, 700);
-				break;
-			case CANVAS_MENU:
-				menu.touchDown(-100, -100);
-				break;
-			case CANVAS_GAME:
-				game.touchDown(450, Game.GG + 20);
-				game.touchUp(450, Game.GG + 20);
-				break;
-			case CANVAS_GAME_PAUSE:
-				pause.touchDown(240, 200);
-				pause.touchUp(240, 200);
-				break;
-			}
-			return true;
-		}
 
+		switch (k){
+			case KeyEvent.KEYCODE_DPAD_UP://向上
+				Log.e("jamie","－－－－－向上－－－－－");
+				break;
+			case KeyEvent.KEYCODE_DPAD_DOWN://向下
+				Log.e("jamie","－－－－－向下－－－－－");
+				break;
+			case KeyEvent.KEYCODE_DPAD_LEFT://向左
+				Log.e("jamie","－－－－－向左－－－－－");
+				break;
+			case KeyEvent.KEYCODE_DPAD_RIGHT://向右
+				Log.e("jamie","－－－－－向右－－－－－");
+				break;
+			case KeyEvent.KEYCODE_ENTER://确定
+				Log.e("jamie","－－－－－确定－－－－－");
+				switch (canvasIndex){
+					case CANVAS_GAME_EXIT:
+						gameExit.touchDown(200, 500);
+						break;
+				}
+				break;
+			case KeyEvent.KEYCODE_BACK://返回
+				Log.e("jamie","－－－－－返回－－－－－");
+				switch (canvasIndex) {
+					case CANVAS_GET_GIFT:
+						getGift.touchDown(400, 240);
+						break;
+					case CANVAS_DAY_GIFT:
+						dayGift.touchDown(240, 700);
+						break;
+					case CANVAS_MENU:
+						menu.touchDown(-100, -100);
+						break;
+					case CANVAS_GAME:
+						game.touchDown(450, Game.GG + 20);
+						game.touchUp(450, Game.GG + 20);
+						break;
+					case CANVAS_GAME_PAUSE:
+						pause.touchDown(240, 200);
+						pause.touchUp(240, 200);
+						break;
+				}
+				return true;
+			case KeyEvent.KEYCODE_HOME://房子
+				Log.e("jamie","－－－－－房子－－－－－");
+				break;
+			case KeyEvent.KEYCODE_MENU://菜单
+				Log.e("jamie","－－－－－菜单－－－－－");
+				break;
+		}
 		return false;
 	}
 
