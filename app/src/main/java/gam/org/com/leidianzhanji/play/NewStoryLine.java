@@ -19,8 +19,7 @@ public class NewStoryLine {
 	}
 
 	public void init(Resources res) {
-		background = BitmapFactory
-				.decodeResource(res, R.drawable.sl_background);
+		background = BitmapFactory.decodeResource(res, R.drawable.sl_background);
 		zi1 = BitmapFactory.decodeResource(res, R.drawable.sl_zi1);
 		zi2 = BitmapFactory.decodeResource(res, R.drawable.sl_zi2);
 		zi3 = BitmapFactory.decodeResource(res, R.drawable.sl_zi3);
