@@ -5,6 +5,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.util.Log;
+import android.view.KeyEvent;
 
 import gam.org.com.leidianzhanji.R;
 
@@ -72,30 +74,26 @@ public class DayGift {
 
     public void renderJM(Canvas g, int a, Paint paint) {
         paint.setAlpha(a);
-//        g.drawBitmap(im, 48, 48, paint);
-//        Tools.paintMImage(g, im, 200, 48, paint);
-//        Tools.paintM2Image(g, im, 48, 400, paint);
-//        Tools.paintRotateImage(g, im, 200, 400, 180, 232, 352, paint);
-        g.drawBitmap(im, 8, 48, paint);   //左上
-        Tools.paintMImage(g, im, 240, 48, paint);   //右上
-        Tools.paintM2Image(g, im, 8, 400, paint);   //左下
-        Tools.paintRotateImage(g, im, 240, 400, 180, 232, 352, paint);  //右下
+        g.drawBitmap(im, 728, 104, paint);   //左上
+        Tools.paintMImage(g, im, 960, 104, paint);   //右上
+        Tools.paintM2Image(g, im, 728, 456, paint);   //左下
+        Tools.paintRotateImage(g, im, 960, 456, 180, 232, 352, paint);  //右下
 
         for (int i = 0; i < 8; i++) {
             if (i < id) {
-                g.drawBitmap(di2, 85, 220 + 51 * i, paint);
+                g.drawBitmap(di2, 776, 290 + 51 * i, paint);
             } else if (i == id) {
-                g.drawBitmap(di3, 85, 220 + 51 * i, paint);
+                g.drawBitmap(di3, 776, 290 + 51 * i, paint);
                 paint.setAlpha(a * alp / 100);
-                g.drawBitmap(di1, 85, 220 + 51 * i, paint);
+                g.drawBitmap(di1, 776, 290 + 51 * i, paint);
                 paint.setAlpha(a);
             } else {
-                g.drawBitmap(di3, 85, 220 + 51 * i, paint);
+                g.drawBitmap(di3, 776, 290 + 51 * i, paint);
             }
         }
 
-        g.drawBitmap(zi, 70, 70, paint);
-        g.drawBitmap(an1, 161, 640, paint);
+        g.drawBitmap(zi, 795, 138, paint);
+        g.drawBitmap(an1, 883, 700, paint);
         paint.setAlpha(255);
     }
 
@@ -214,5 +212,34 @@ public class DayGift {
         }
         day = d;
         Data.save();
+    }
+
+    public void keyDown(int k) {
+        switch (k) {
+            case KeyEvent.KEYCODE_DPAD_UP://向上
+                Log.e("jamie", "－－－－－向上－－－－－");
+                break;
+            case KeyEvent.KEYCODE_DPAD_DOWN://向下
+                Log.e("jamie", "－－－－－向下－－－－－");
+                break;
+            case KeyEvent.KEYCODE_DPAD_LEFT://向左
+                Log.e("jamie", "－－－－－向左－－－－－");
+                break;
+            case KeyEvent.KEYCODE_DPAD_RIGHT://向右
+                Log.e("jamie", "－－－－－向右－－－－－");
+                break;
+            case KeyEvent.KEYCODE_ENTER://确定
+                Log.e("jamie", "－－－－－确定－－－－－");
+                break;
+            case KeyEvent.KEYCODE_BACK://返回
+                Log.e("jamie", "－－－－－返回－－－－－");
+                break;
+            case KeyEvent.KEYCODE_HOME://房子
+                Log.e("jamie", "－－－－－房子－－－－－");
+                break;
+            case KeyEvent.KEYCODE_MENU://菜单
+                Log.e("jamie", "－－－－－菜单－－－－－");
+                break;
+        }
     }
 }

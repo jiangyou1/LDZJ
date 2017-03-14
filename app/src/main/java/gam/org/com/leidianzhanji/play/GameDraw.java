@@ -12,6 +12,7 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.graphics.PaintFlagsDrawFilter;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
@@ -162,12 +163,13 @@ public class GameDraw extends SurfaceView implements Runnable {
         mPaint.setAntiAlias(true);
         switch (canvasIndex) {
             case CANVAS_PROGRESS:
-//                g.drawColor(0xffffffff);
-                g.drawBitmap(BitmapFactory.decodeResource(res, R.drawable.sl_background), null, new Rect(0, 0, 1920, 1080), mPaint);
+                g.drawBitmap(BitmapFactory.decodeResource(res, R.drawable.sl_background), 0, 0, mPaint);
                 mPaint.setColor(0xffFF0000);
                 if (time > 0) {
-                    mPaint.setTextSize(30);
-                    g.drawText("加载中...", 350, 780, mPaint);
+                    mPaint.setTextSize(50);
+                    Typeface font = Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD_ITALIC);
+                    mPaint.setTypeface(font);
+                    g.drawText("加载中...", 850, 500, mPaint);
                 }
                 break;
             case CANVAS_NPC_INTRODUCE:
@@ -246,15 +248,15 @@ public class GameDraw extends SurfaceView implements Runnable {
                         // isSound = PaymentJoy.isMusicon();
                         MainActivity.isYD = MainActivity.main.isCM();
                     } else if (time <= 0) {
-//                        if (Game.isFrist) {
+                        if (Game.isFrist) {
                             storyLine.init(res);
                             storyLine.reset();
-//                        } else {
-//                            menu.init(res);
-//                            menu.reset();
-//                            isPlayMusic(bossMediaPlayer, gameMediaPlayer,
-//                                    menuMediaPlayer);
-//                        }
+                        } else {
+                            menu.init(res);
+                            menu.reset();
+                            isPlayMusic(bossMediaPlayer, gameMediaPlayer,
+                                    menuMediaPlayer);
+                        }
                     }
                 }
                 break;
@@ -523,58 +525,62 @@ public class GameDraw extends SurfaceView implements Runnable {
     }
 
     public boolean keyDown(int k) {
-        switch (k) {
-            case KeyEvent.KEYCODE_DPAD_UP://向上
-                Log.e("jamie", "－－－－－向上－－－－－");
+        switch (canvasIndex) {
+            case CANVAS_PROGRESS:
                 break;
-            case KeyEvent.KEYCODE_DPAD_DOWN://向下
-                Log.e("jamie", "－－－－－向下－－－－－");
+            case CANVAS_NPC_INTRODUCE:
+                npcIntroduce.keyDown(k);
                 break;
-            case KeyEvent.KEYCODE_DPAD_LEFT://向左
-                Log.e("jamie", "－－－－－向左－－－－－");
+            case CANVAS_BILLING_DIALOG:
+                billingDialog.keyDown(k);
                 break;
-            case KeyEvent.KEYCODE_DPAD_RIGHT://向右
-                Log.e("jamie", "－－－－－向右－－－－－");
+            case CANVAS_GET_GIFT:
+                getGift.keyDown(k);
                 break;
-            case KeyEvent.KEYCODE_ENTER://确定
-                Log.e("jamie", "－－－－－确定－－－－－");
-                switch (canvasIndex) {
-                    case CANVAS_GAME_EXIT:
-                        gameExit.touchDown(200, 500);
-                        gameExit.touchUp(200, 500);
-                        break;
-                }
+            case CANVAS_DAY_GIFT:
+                dayGift.keyDown(k);
                 break;
-            case KeyEvent.KEYCODE_BACK://返回
-                Log.e("jamie", "－－－－－返回－－－－－");
-                switch (canvasIndex) {
-                    case CANVAS_GET_GIFT:
-                        getGift.touchDown(400, 240);
-                        break;
-                    case CANVAS_DAY_GIFT:
-                        dayGift.touchDown(240, 700);
-                        break;
-                    case CANVAS_MENU:
-                        menu.touchDown(-100, -100);
-                        break;
-                    case CANVAS_GAME:
-                        game.touchDown(450, Game.GG + 20);
-                        game.touchUp(450, Game.GG + 20);
-                        break;
-                    case CANVAS_GAME_PAUSE:
-                        pause.touchDown(240, 200);
-                        pause.touchUp(240, 200);
-                        break;
-                }
-                return true;
-            case KeyEvent.KEYCODE_HOME://房子
-                Log.e("jamie", "－－－－－房子－－－－－");
+            case CANVAS_MENU:
+                menu.keyDown(k);
                 break;
-            case KeyEvent.KEYCODE_MENU://菜单
-                Log.e("jamie", "－－－－－菜单－－－－－");
+            case CANVAS_HEFP:
+                help.keyDown(k);
+                break;
+            case CANVAS_SETTING:
+                setting.keyDown(k);
+                break;
+            case CANVAS_ACHIEVE:
+                achieve.keyDown(k);
+                break;
+            case CANVAS_CHOOSE_BOSS:
+                chooseBoss.keyDown(k);
+                break;
+            case CANVAS_CHOOSE_AIRPLANE:
+                chooseAirplane.keyDown(k);
+                break;
+            case CANVAS_LEVEL:
+                level.keyDown(k);
+                break;
+            case CANVAS_AIRPLANE_UPGRADE:
+                airplaneUpgrade.keyDown(k);
+                break;
+            case CANVAS_FIRST_STORY_LINE:
+                storyLine.keyDown(k);
+                break;
+            case CANVAS_GAME:
+                game.keyDown(k);
+                break;
+            case CANVAS_GAME_WIN:
+                gameWin.keyDown(k);
+                break;
+            case CANVAS_GAME_PAUSE:
+                pause.keyDown(k);
+                break;
+            case CANVAS_GAME_EXIT:
+                gameExit.keyDown(k);
                 break;
         }
-        return false;
+        return true;
     }
 
     public static AudioManager mgr;
