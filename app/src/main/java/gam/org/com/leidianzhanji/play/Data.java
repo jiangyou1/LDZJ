@@ -43,7 +43,6 @@ public class Data {
             jx = dis.readBoolean();
             buy = dis.readBoolean();
             Game.isFrist = dis.readBoolean();
-            Game.isFrist = true;
             MainActivity.isFirstPlay = dis.readBoolean();
             MainActivity.isEndPlay = dis.readBoolean();
             level = dis.readByte();

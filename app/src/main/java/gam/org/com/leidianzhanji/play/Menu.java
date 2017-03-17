@@ -51,7 +51,7 @@ public class Menu {
     }
 
     public void init(Resources res) {
-        Log.i("jamie", "----------init----------------");
+        Log.i("Menu", "----------init----------------");
         an2 = BitmapFactory.decodeResource(res, R.drawable.menu_an2);
         anSetting = BitmapFactory.decodeResource(res, R.drawable.menu_an31);
         liangSetting = BitmapFactory.decodeResource(res, R.drawable.menu_an32);
@@ -61,7 +61,7 @@ public class Menu {
         liangStart = BitmapFactory.decodeResource(res, R.drawable.menu_an52);
         gai1 = BitmapFactory.decodeResource(res, R.drawable.menu_gai1);
         gai2 = BitmapFactory.decodeResource(res, R.drawable.menu_gai2);
-        fei2 = BitmapFactory.decodeResource(res, R.drawable.menu_fei2);
+        fei2 = BitmapFactory.decodeResource(res, R.drawable.menu_fei1);
         bt1 = BitmapFactory.decodeResource(res, R.drawable.menu_bt1);
         suo = BitmapFactory.decodeResource(res, R.drawable.menu_suo);
         an_a[0] = BitmapFactory.decodeResource(res, R.drawable.menu_an61);
@@ -73,7 +73,7 @@ public class Menu {
     }
 
     public void initPart(Resources res) {
-        Log.i("jamie", "----------initPart----------------");
+        Log.i("Menu", "----------initPart----------------");
         an2 = BitmapFactory.decodeResource(res, R.drawable.menu_an2);
         anSetting = BitmapFactory.decodeResource(res, R.drawable.menu_an31);
         liangSetting = BitmapFactory.decodeResource(res, R.drawable.menu_an32);
@@ -94,7 +94,7 @@ public class Menu {
     }
 
     public void free() {
-        Log.i("jamie", "----------free----------------");
+        Log.i("Menu", "----------free----------------");
         an2 = null;
         anSetting = null;
         liangSetting = null;
@@ -114,12 +114,12 @@ public class Menu {
     }
 
     public void freePart() {
-        Log.i("jamie", "----------freePart----------------");
+        Log.i("Menu", "----------freePart----------------");
         fei2 = null;
     }
 
     public void reset() {
-        Log.i("jamie", "----------reset----------------");
+        Log.i("Menu", "----------reset----------------");
         mode = 0;
         time = 8;
         time2 = 10;
@@ -130,7 +130,7 @@ public class Menu {
     }
 
     public void reset2() {
-        Log.i("jamie", "----------reset2----------------");
+        Log.i("Menu", "----------reset2----------------");
         mode = 6;
         time = 10;
         time2 = 10;
@@ -143,49 +143,49 @@ public class Menu {
     }
 
     public void render(Canvas g, Paint paint) {
-        Log.i("jamie", "----------render----------------" + mode);
-        switch (mode) {
+        Log.i("Menu", "----------render----------------" + mode);
+        switch (2) {
             case 0:// 静态
                 g.drawBitmap(bg, 0, 0, paint);
-                g.drawBitmap(an2, 0, 611, paint);
-                Tools.paintMImage(g, an2, 240, 611, paint);
-                g.drawBitmap(gai2, 40, -119, paint);
-                Tools.paintMImage(g, gai2, 240, -119, paint);
-                g.drawBitmap(gai1, 0, -68, paint);
-                Tools.paintMImage(g, gai1, 240, -68, paint);
-                g.drawBitmap(fei2, 80, 183, paint);
-                g.drawBitmap(bt1, 96, 50, paint);
-                g.drawBitmap(anStart, 169, 635, paint);
-                g.drawBitmap(anAchieve, 2, 696, paint);
-                g.drawBitmap(anSetting, 378, 696, paint);
+                g.drawBitmap(an2, 550, 855, paint);
+                Tools.paintMImage(g, an2, 939, 855, paint);
+                g.drawBitmap(gai2, 673, 0, paint);
+                Tools.paintMImage(g, gai2, 969, 0, paint);
+                g.drawBitmap(fei2, 845, 399, paint);
+                g.drawBitmap(bt1, 760, 98, paint);
+                g.drawBitmap(anStart, 845, 870, paint);
+                g.drawBitmap(anAchieve, 500,920, paint);
+                g.drawBitmap(anSetting, 1270,920, paint);
+                g.drawBitmap(gai1, 510, -10, paint);
+                Tools.paintMImage(g, gai1, 950, -10, paint);
                 break;
             case 1:// 上拉、下滑
                 g.drawBitmap(bg, 0, 0, paint);
-                g.drawBitmap(gai2, 40, -119, paint);
-                Tools.paintMImage(g, gai2, 240, -119, paint);
-                g.drawBitmap(gai1, 0, -68 - time * 50, paint);
-                Tools.paintMImage(g, gai1, 240, -68 - time * 50, paint);
-                g.drawBitmap(fei2, 80, 183, paint);
-                g.drawBitmap(bt1, 96, 50, paint);
-                g.drawBitmap(an2, 0, 611 + time * 19, paint);
-                Tools.paintMImage(g, an2, 240, 611 + time * 19, paint);
-                g.drawBitmap(anStart, 169, 635 + time * 19, paint);
-                g.drawBitmap(anAchieve, 2, 696 + time * 19, paint);
-                g.drawBitmap(anSetting, 378, 696 + time * 19, paint);
+                g.drawBitmap(gai2, 673, 0, paint);
+                Tools.paintMImage(g, gai2, 969, 0, paint);
+                g.drawBitmap(gai1, 510, -68 - time * 100, paint);
+                Tools.paintMImage(g, gai1, 950, -68 - time * 100, paint);
+                g.drawBitmap(fei2, 845, 399, paint);
+                g.drawBitmap(bt1, 760, 98, paint);
+                g.drawBitmap(an2, 550, 855 + time * 19, paint);
+                Tools.paintMImage(g, an2, 939, 855 + time * 19, paint);
+                g.drawBitmap(anStart, 845, 870 + time * 19, paint);
+                g.drawBitmap(anAchieve, 500, 920 + time * 19, paint);
+                g.drawBitmap(anSetting, 1270, 920 + time * 19, paint);
                 break;
             case 2:// 下拉，上滑
                 g.drawBitmap(bg, 0, 0, paint);
-                g.drawBitmap(fei2, 80, 183, paint);
-                g.drawBitmap(gai2, 40, -119 + time * 10, paint);
-                Tools.paintMImage(g, gai2, 240, -119 + time * 10, paint);
-                g.drawBitmap(bt1, 96, 50 + time * 10, paint);
-                g.drawBitmap(gai1, 0, -68 - 10 * 50, paint);
-                Tools.paintMImage(g, gai1, 240, -68 - 10 * 50, paint);
-                g.drawBitmap(an2, 0, 611 + time2 * 19, paint);
-                Tools.paintMImage(g, an2, 240, 611 + time2 * 19, paint);
-                g.drawBitmap(anStart, 169, 635 + time2 * 19, paint);
-                g.drawBitmap(anAchieve, 2, 696 + time2 * 19, paint);
-                g.drawBitmap(anSetting, 378, 696 + time2 * 19, paint);
+                g.drawBitmap(fei2, 845, 399, paint);
+                g.drawBitmap(gai2, 673, -119 + time * 10, paint);
+                Tools.paintMImage(g, gai2, 969, -119 + time * 10, paint);
+                g.drawBitmap(bt1, 760, 50 + time * 10, paint);
+                g.drawBitmap(gai1, 510, -68 - 10 * 50, paint);
+                Tools.paintMImage(g, gai1, 950, -68 - 10 * 50, paint);
+                g.drawBitmap(an2, 550, 611 + time2 * 19, paint);
+                Tools.paintMImage(g, an2, 939, 611 + time2 * 19, paint);
+                g.drawBitmap(anStart, 845, 635 + time2 * 19, paint);
+                g.drawBitmap(anAchieve, 500, 696 + time2 * 19, paint);
+                g.drawBitmap(anSetting, 1270, 696 + time2 * 19, paint);
                 break;
             case 3:// 飞行
                 g.drawBitmap(bg, 0, 0, paint);
@@ -197,9 +197,9 @@ public class Menu {
                 Tools.paintMImage(g, gai1, 240, -68 - 10 * 50, paint);
                 g.drawBitmap(an2, 0, 611, paint);
                 Tools.paintMImage(g, an2, 240, 611, paint);
-                g.drawBitmap(anStart, 169, 635, paint);
-                g.drawBitmap(anAchieve, 2, 696, paint);
-                g.drawBitmap(anSetting, 378, 696, paint);
+                g.drawBitmap(anStart, 860, 870, paint);
+                g.drawBitmap(anAchieve, 490,920, paint);
+                g.drawBitmap(anSetting, 1270,920, paint);
                 break;
             case 4:// 文字
                 freePart();
@@ -211,9 +211,9 @@ public class Menu {
                 Tools.paintMImage(g, gai1, 240, -68 - 10 * 50, paint);
                 g.drawBitmap(an2, 0, 611, paint);
                 Tools.paintMImage(g, an2, 240, 611, paint);
-                g.drawBitmap(anStart, 169, 635, paint);
-                g.drawBitmap(anAchieve, 2, 696, paint);
-                g.drawBitmap(anSetting, 378, 696, paint);
+                g.drawBitmap(anStart, 860, 870, paint);
+                g.drawBitmap(anAchieve, 490,920, paint);
+                g.drawBitmap(anSetting, 1270,920, paint);
                 paint.setAlpha(time * 25);
                 for (int i = 0; i < 3; i++) {
                     g.drawBitmap(an_a[i], 45, 300 + i * 100, paint);
@@ -283,7 +283,7 @@ public class Menu {
     }
 
     public void renderBT(Canvas g, int time, Paint paint) {
-        Log.i("jamie", "----------renderBT----------------");
+        Log.i("Menu", "----------renderBT----------------");
         g.drawBitmap(gai2, 40, -19 - time * 30, paint);
         Tools.paintMImage(g, gai2, 240, -19 - time * 30, paint);
         g.drawBitmap(bt1, 96, 150 - time * 25, paint);
@@ -292,7 +292,7 @@ public class Menu {
     }
 
     public void upData() {
-        Log.i("jamie", "----------upData----------------" + mode);
+        Log.i("Menu", "----------upData----------------" + mode);
         switch (mode) {
             case 0:
                 if (time > 0) {
@@ -425,7 +425,7 @@ public class Menu {
     }
 
     public void touchDown(float tx, float ty) {
-        Log.i("jamie", "----------touchDown----------------");
+        Log.i("Menu", "----------touchDown----------------");
         switch (mode) {
             case 5:
                 if (tx < 103 && ty > 696) {// 成就
@@ -455,7 +455,7 @@ public class Menu {
     }
 
     public void touchUp(float tx, float ty) {
-        Log.i("jamie", "----------touchUp----------------");
+        Log.i("Menu", "----------touchUp----------------");
         switch (mode) {
             case 5:
                 if ((tx < 103 && ty > 696) && isDownAchieve) {// 成就
@@ -511,7 +511,7 @@ public class Menu {
     }
 
     public void touchMove(float tx, float ty) {
-        Log.i("jamie", "----------touchMove----------------");
+        Log.i("Menu", "----------touchMove----------------");
         switch (mode) {
             case 5:
                 if (!(tx < 103 && ty > 696) && isDownAchieve) {// 成就

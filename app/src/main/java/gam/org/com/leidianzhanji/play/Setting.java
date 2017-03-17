@@ -54,28 +54,28 @@ public class Setting {
     public void render(Canvas g, Paint paint) {
         gameDraw.menu.render(g, paint);
         g.drawColor(0x99000000);
-        g.drawBitmap(im, 48, 280, paint);
-        Tools.paintMImage(g, im, 240, 280, paint);
-        Tools.paintM2Image(g, im, 48, 280 + 172, paint);
-        Tools.paintRotateImage(g, im, 240, 280 + 172, 180, 192, 172, paint);
+        g.drawBitmap(im, 760, 382, paint);
+        Tools.paintMImage(g, im, 950, 382, paint);
+        Tools.paintM2Image(g, im, 760, 550, paint);
+        Tools.paintRotateImage(g, im, 950, 550, 180, 192, 172, paint);
 
-        g.drawBitmap(bt, 147, 370, paint);
+        g.drawBitmap(bt, 853, 496, paint);
         if (isDownExit) {
-            g.drawBitmap(back1, 360, 310, paint);
+            g.drawBitmap(back1, 1016, 420, paint);
         } else {
-            g.drawBitmap(back1, 360, 310, paint);
+            g.drawBitmap(back1, 1016, 420, paint);
         }
 
         if (GameDraw.isSound == false) {
-            g.drawBitmap(an2, 145, 478, paint);
-            g.drawBitmap(an1, 337, 478, paint);
+            g.drawBitmap(an2, 1071, 618, paint);
+            g.drawBitmap(an1, 865, 618, paint);
         } else {
-            g.drawBitmap(an1, 145, 478, paint);
-            g.drawBitmap(an2, 337, 478, paint);
+            g.drawBitmap(an1, 865, 618, paint);
+            g.drawBitmap(an2, 1071, 618, paint);
         }
 
-        g.drawBitmap(sk, 95, 483, paint);
-        g.drawBitmap(sg, 287, 483, paint);
+        g.drawBitmap(sk, 803, 618, paint);
+        g.drawBitmap(sg, 1008, 618, paint);
     }
 
     public void upData() {
