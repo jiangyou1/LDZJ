@@ -61,7 +61,7 @@ public class Setting {
 
         g.drawBitmap(bt, 853, 496, paint);
         if (isDownExit) {
-            g.drawBitmap(back1, 1016, 420, paint);
+            g.drawBitmap(back1, 1116, 420, paint);
         } else {
             g.drawBitmap(back1, 1016, 420, paint);
         }

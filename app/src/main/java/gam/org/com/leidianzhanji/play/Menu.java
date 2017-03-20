@@ -144,7 +144,7 @@ public class Menu {
 
     public void render(Canvas g, Paint paint) {
         Log.i("Menu", "----------render----------------" + mode);
-        switch (2) {
+        switch (mode) {
             case 0:// 静态
                 g.drawBitmap(bg, 0, 0, paint);
                 g.drawBitmap(an2, 550, 855, paint);
@@ -154,8 +154,8 @@ public class Menu {
                 g.drawBitmap(fei2, 845, 399, paint);
                 g.drawBitmap(bt1, 760, 98, paint);
                 g.drawBitmap(anStart, 845, 870, paint);
-                g.drawBitmap(anAchieve, 500,920, paint);
-                g.drawBitmap(anSetting, 1270,920, paint);
+                g.drawBitmap(anAchieve, 500, 920, paint);
+                g.drawBitmap(anSetting, 1270, 920, paint);
                 g.drawBitmap(gai1, 510, -10, paint);
                 Tools.paintMImage(g, gai1, 950, -10, paint);
                 break;
@@ -176,50 +176,51 @@ public class Menu {
             case 2:// 下拉，上滑
                 g.drawBitmap(bg, 0, 0, paint);
                 g.drawBitmap(fei2, 845, 399, paint);
-                g.drawBitmap(gai2, 673, -119 + time * 10, paint);
-                Tools.paintMImage(g, gai2, 969, -119 + time * 10, paint);
-                g.drawBitmap(bt1, 760, 50 + time * 10, paint);
-                g.drawBitmap(gai1, 510, -68 - 10 * 50, paint);
-                Tools.paintMImage(g, gai1, 950, -68 - 10 * 50, paint);
-                g.drawBitmap(an2, 550, 611 + time2 * 19, paint);
-                Tools.paintMImage(g, an2, 939, 611 + time2 * 19, paint);
-                g.drawBitmap(anStart, 845, 635 + time2 * 19, paint);
-                g.drawBitmap(anAchieve, 500, 696 + time2 * 19, paint);
-                g.drawBitmap(anSetting, 1270, 696 + time2 * 19, paint);
+                g.drawBitmap(gai2, 673, -100 + time * 10, paint);
+                Tools.paintMImage(g, gai2, 969, -100 + time * 10, paint);
+                g.drawBitmap(bt1, 760, 0 + time * 10, paint);
+                g.drawBitmap(gai1, 510, -10 * 100, paint);
+                Tools.paintMImage(g, gai1, 950, -10 * 100, paint);
+
+                g.drawBitmap(an2, 550, 855 + time2 * 22, paint);
+                Tools.paintMImage(g, an2, 939, 855 + time2 * 22, paint);
+                g.drawBitmap(anStart, 845, 870 + time2 * 22, paint);
+                g.drawBitmap(anAchieve, 500, 920 + time2 * 22, paint);
+                g.drawBitmap(anSetting, 1270, 920 + time2 * 22, paint);
                 break;
             case 3:// 飞行
                 g.drawBitmap(bg, 0, 0, paint);
-                g.drawBitmap(fei2, 80 - time * 42, 183 - time * 49, paint);
-                g.drawBitmap(gai2, 40, -119 + 10 * 10, paint);
-                Tools.paintMImage(g, gai2, 240, -119 + 10 * 10, paint);
-                g.drawBitmap(bt1, 96, 50 + 10 * 10, paint);
-                g.drawBitmap(gai1, 0, -68 - 10 * 50, paint);
-                Tools.paintMImage(g, gai1, 240, -68 - 10 * 50, paint);
-                g.drawBitmap(an2, 0, 611, paint);
-                Tools.paintMImage(g, an2, 240, 611, paint);
+                g.drawBitmap(gai1, 510, -10 * 100, paint);
+                Tools.paintMImage(g, gai1, 950, -10 * 100, paint);
+                g.drawBitmap(gai2, 673, 0, paint);
+                Tools.paintMImage(g, gai2, 969, 0, paint);
+                g.drawBitmap(bt1, 760, 98, paint);
+                g.drawBitmap(fei2, 845 - time * 120, 399 - time * 100, paint);
+                g.drawBitmap(an2, 550, 855, paint);
+                Tools.paintMImage(g, an2, 939, 855, paint);
                 g.drawBitmap(anStart, 860, 870, paint);
-                g.drawBitmap(anAchieve, 490,920, paint);
-                g.drawBitmap(anSetting, 1270,920, paint);
+                g.drawBitmap(anAchieve, 490, 920, paint);
+                g.drawBitmap(anSetting, 1270, 920, paint);
                 break;
             case 4:// 文字
                 freePart();
                 g.drawBitmap(bg, 0, 0, paint);
-                g.drawBitmap(gai2, 40, -119 + 10 * 10, paint);
-                Tools.paintMImage(g, gai2, 240, -119 + 10 * 10, paint);
-                g.drawBitmap(bt1, 96, 50 + 10 * 10, paint);
-                g.drawBitmap(gai1, 0, -68 - 10 * 50, paint);
-                Tools.paintMImage(g, gai1, 240, -68 - 10 * 50, paint);
-                g.drawBitmap(an2, 0, 611, paint);
-                Tools.paintMImage(g, an2, 240, 611, paint);
+                g.drawBitmap(gai1, 510, -10 * 100, paint);
+                Tools.paintMImage(g, gai1, 950, -10 * 100, paint);
+                g.drawBitmap(gai2, 673, 0, paint);
+                Tools.paintMImage(g, gai2, 969, 0, paint);
+                g.drawBitmap(bt1, 760, 98, paint);
+                g.drawBitmap(an2, 550, 855, paint);
+                Tools.paintMImage(g, an2, 939, 855, paint);
                 g.drawBitmap(anStart, 860, 870, paint);
-                g.drawBitmap(anAchieve, 490,920, paint);
-                g.drawBitmap(anSetting, 1270,920, paint);
+                g.drawBitmap(anAchieve, 490, 920, paint);
+                g.drawBitmap(anSetting, 1270, 920, paint);
                 paint.setAlpha(time * 25);
                 for (int i = 0; i < 3; i++) {
-                    g.drawBitmap(an_a[i], 45, 300 + i * 100, paint);
+                    g.drawBitmap(an_a[i], 683, 370 + i * 150, paint);
                     if (i < 2) {
                         if (s[i] == false) {
-                            g.drawBitmap(suo, 100, 319 + i * 100, paint);
+                            g.drawBitmap(suo, 743, 389 + i * 150, paint);
                         }
                     }
                 }
@@ -227,56 +228,56 @@ public class Menu {
                 break;
             case 5:// 静态
                 g.drawBitmap(bg, 0, 0, paint);
-                g.drawBitmap(gai2, 40, -119 + 10 * 10, paint);
-                Tools.paintMImage(g, gai2, 240, -119 + 10 * 10, paint);
-                g.drawBitmap(bt1, 96, 50 + 10 * 10, paint);
-                g.drawBitmap(gai1, 0, -68 - 10 * 50, paint);
-                Tools.paintMImage(g, gai1, 240, -68 - 10 * 50, paint);
-                g.drawBitmap(an2, 0, 611, paint);
-                Tools.paintMImage(g, an2, 240, 611, paint);
+                g.drawBitmap(gai1, 510, -10 * 100, paint);
+                Tools.paintMImage(g, gai1, 950, -10 * 100, paint);
+                g.drawBitmap(gai2, 673, 0, paint);
+                Tools.paintMImage(g, gai2, 969, 0, paint);
+                g.drawBitmap(bt1, 760, 98, paint);
+                g.drawBitmap(an2, 550, 855, paint);
+                Tools.paintMImage(g, an2, 939, 855, paint);
                 if (isDownStart)
-                    g.drawBitmap(liangStart, 169, 635, paint);
+                    g.drawBitmap(liangStart, 860, 870, paint);
                 else
-                    g.drawBitmap(anStart, 169, 635, paint);
+                    g.drawBitmap(anStart, 860, 870, paint);
                 if (isDownAchieve)
-                    g.drawBitmap(liangAchieve, 2, 696, paint);
+                    g.drawBitmap(liangAchieve, 490, 920, paint);
                 else
-                    g.drawBitmap(anAchieve, 2, 696, paint);
+                    g.drawBitmap(anAchieve, 490, 920, paint);
                 if (isDownSetting)
-                    g.drawBitmap(liangSetting, 378, 696, paint);
+                    g.drawBitmap(liangSetting, 1270, 920, paint);
                 else
-                    g.drawBitmap(anSetting, 378, 696, paint);
+                    g.drawBitmap(anSetting, 1270, 920, paint);
                 if (isDownBoss && s[0])
-                    g.drawBitmap(an_l[0], 45, 300, paint);
+                    g.drawBitmap(an_l[0], 683, 370, paint);
                 else
-                    g.drawBitmap(an_a[0], 45, 300, paint);
+                    g.drawBitmap(an_a[0], 683, 370, paint);
                 if (isDownUpgrade && s[1])
-                    g.drawBitmap(an_l[1], 45, 300 + 100, paint);
+                    g.drawBitmap(an_l[1], 683, 370 + 150, paint);
                 else
-                    g.drawBitmap(an_a[1], 45, 300 + 100, paint);
+                    g.drawBitmap(an_a[1], 683, 370 + 150, paint);
                 if (isDownHelp)
-                    g.drawBitmap(an_l[2], 45, 300 + 200, paint);
+                    g.drawBitmap(an_l[2], 683, 370 + 300, paint);
                 else
-                    g.drawBitmap(an_a[2], 45, 300 + 200, paint);
+                    g.drawBitmap(an_a[2], 683, 370 + 300, paint);
                 for (int i = 0; i < 2; i++) {
                     if (!s[i])
-                        g.drawBitmap(suo, 100, 319 + i * 100, paint);
+                        g.drawBitmap(suo, 743, 389 + i * 150, paint);
                 }
                 break;
             case 6:// 状态的切换
                 if (time >= 0) {
                     g.drawBitmap(bg, 0, 0, paint);
-                    g.drawBitmap(gai2, 40, -19 - time * 30, paint);
-                    Tools.paintMImage(g, gai2, 240, -19 - time * 30, paint);
-                    g.drawBitmap(bt1, 96, 150 - time * 25, paint);
-                    g.drawBitmap(gai1, 0, -568 - time * 15, paint);
-                    Tools.paintMImage(g, gai1, 240, -568 - time * 15, paint);
+                    g.drawBitmap(gai2, 673,  - time * 50, paint);
+                    Tools.paintMImage(g, gai2, 969, - time * 50, paint);
+                    g.drawBitmap(bt1, 760, 98 - time * 50, paint);
+                    g.drawBitmap(gai1, 510, -10 - time * 15, paint);
+                    Tools.paintMImage(g, gai1, 950, -10 - time * 15, paint);
 
-                    g.drawBitmap(an2, 0, 611 + time * 32, paint);
-                    Tools.paintMImage(g, an2, 240, 611 + time * 32, paint);
-                    g.drawBitmap(anStart, 169, 635 + time * 32, paint);
-                    g.drawBitmap(anAchieve, 2, 696 + time * 32, paint);
-                    g.drawBitmap(anSetting, 378, 696 + time * 32, paint);
+                    g.drawBitmap(an2, 550, 855 + time * 32, paint);
+                    Tools.paintMImage(g, an2, 939, 855 + time * 32, paint);
+                    g.drawBitmap(anStart, 860, 870 + time * 32, paint);
+                    g.drawBitmap(anAchieve, 490, 920 + time * 32, paint);
+                    g.drawBitmap(anSetting, 1270, 920 + time * 32, paint);
                 }
                 break;
         }
