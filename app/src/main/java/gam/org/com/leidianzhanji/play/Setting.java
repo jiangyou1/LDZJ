@@ -63,7 +63,7 @@ public class Setting {
         if (isDownExit) {
             g.drawBitmap(back1, 1116, 420, paint);
         } else {
-            g.drawBitmap(back1, 1016, 420, paint);
+            g.drawBitmap(back1, 1116, 420, paint);
         }
 
         if (GameDraw.isSound == false) {
@@ -83,28 +83,28 @@ public class Setting {
     }
 
     public void touchDown(float tx, float ty) {
-        if (ty > 480 && ty < 525 && tx > 90 && tx < 210) {// 开启声音
+        if (ty > 618 && ty < 664 && tx > 865 && tx < 977) {// 开启声音
             if (!GameDraw.isSound) {
                 GameDraw.isSound = true;
                 GameDraw.isPlayMusic(GameDraw.gameMediaPlayer,
                         GameDraw.bossMediaPlayer, GameDraw.menuMediaPlayer);
                 GameDraw.gameSound(1);
             }
-        } else if (ty > 480 && ty < 525 && tx > 280 && tx < 390) {// 关闭声音
+        } else if (ty > 618 && ty < 664 && tx > 280 && tx < 977) {// 关闭声音
             GameDraw.gameSound(1);
             if (GameDraw.isSound) {
                 GameDraw.isSound = false;
                 GameDraw.isPlayMusic(GameDraw.gameMediaPlayer,
                         GameDraw.bossMediaPlayer, GameDraw.menuMediaPlayer);
             }
-        } else if (tx > 350 && ty > 300 && tx < 415 && ty < 355) {// 返回
+        } else if (tx > 1116 && ty > 420 && tx < 1171 && ty < 465) {// 返回
             GameDraw.gameSound(1);
             isDownExit = true;
         }
     }
 
     public void touchUp(float tx, float ty) {
-        if ((tx > 350 && ty > 300 && tx < 415 && ty < 355) && isDownExit) {// 返回
+        if ((tx > 1116 && ty > 420 && tx < 1171 && ty < 465) && isDownExit) {// 返回
             isDownExit = false;
             gameDraw.canvasIndex = GameDraw.CANVAS_MENU;
             Menu.index = Menu.NULL;
@@ -112,7 +112,7 @@ public class Setting {
     }
 
     public void touchMove(float tx, float ty) {
-        if (!(tx > 350 && ty > 300 && tx < 415 && ty < 355) && isDownExit) {// 返回
+        if (!(tx > 1116 && ty > 420 && tx < 1171 && ty < 465) && isDownExit) {// 返回
             isDownExit = false;
         }
     }
@@ -136,6 +136,8 @@ public class Setting {
                 break;
             case KeyEvent.KEYCODE_BACK://返回
                 Log.e("jamie", "－－－－－返回－－－－－");
+                GameDraw.gameSound(1);
+                isDownExit = true;
                 break;
             case KeyEvent.KEYCODE_HOME://房子
                 Log.e("jamie", "－－－－－房子－－－－－");
