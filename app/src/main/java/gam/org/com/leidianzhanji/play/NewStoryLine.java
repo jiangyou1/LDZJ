@@ -149,7 +149,7 @@ public class NewStoryLine {
     }
 
     public void touchDown(float tx, float ty) {
-        if (tx > 330 && ty > 730 && (mode == 2 || mode == 3 || mode == 5)) {
+        if (tx > 810 && ty > 860 && (mode == 2 || mode == 3 || mode == 5)) {
             GameDraw.gameSound(1);
             time = 0;
             mode = 5;
@@ -172,9 +172,15 @@ public class NewStoryLine {
                 break;
             case KeyEvent.KEYCODE_ENTER://确定
                 Log.e("jamie", "－－－－－确定－－－－－");
+                GameDraw.gameSound(1);
+                time = 0;
+                mode = 5;
                 break;
             case KeyEvent.KEYCODE_BACK://返回
                 Log.e("jamie", "－－－－－返回－－－－－");
+                GameDraw.gameSound(1);
+                time = 0;
+                mode = 5;
                 break;
             case KeyEvent.KEYCODE_HOME://房子
                 Log.e("jamie", "－－－－－房子－－－－－");

@@ -300,9 +300,23 @@ public class GetGift {
                 break;
             case KeyEvent.KEYCODE_ENTER://确定
                 Log.e("jamie", "－－－－－确定－－－－－");
+                switch (mode) {
+                    case 3:
+                        time = 0;
+                        mode = 4;
+                        gameDraw.game.addShuijing(0);
+                        break;
+                }
                 break;
             case KeyEvent.KEYCODE_BACK://返回
                 Log.e("jamie", "－－－－－返回－－－－－");
+                switch (mode) {
+                    case 3:
+                        time = 0;
+                        mode = 4;
+                        gameDraw.game.addShuijing(0);
+                        break;
+                }
                 break;
             case KeyEvent.KEYCODE_HOME://房子
                 Log.e("jamie", "－－－－－房子－－－－－");

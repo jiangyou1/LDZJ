@@ -189,7 +189,7 @@ public class DayGift {
     public void touchDown(float tx, float ty) {
         switch (mode) {
             case 2:
-                if (tx > 140 && tx < 340 && ty > 620 && ty < 740) {
+                if (tx > 883 && tx < 883 + 153 && ty > 700 && ty < 700 + 78) {
                     GameDraw.gameSound(1);
                     mode = 20;
                     t = 10;
@@ -230,9 +230,25 @@ public class DayGift {
                 break;
             case KeyEvent.KEYCODE_ENTER://确定
                 Log.e("jamie", "－－－－－确定－－－－－");
+                switch (mode) {
+                    case 2:
+                        GameDraw.gameSound(1);
+                        mode = 20;
+                        t = 10;
+                        getGift(id);
+                        break;
+                }
                 break;
             case KeyEvent.KEYCODE_BACK://返回
                 Log.e("jamie", "－－－－－返回－－－－－");
+                switch (mode) {
+                    case 2:
+                        GameDraw.gameSound(1);
+                        mode = 20;
+                        t = 10;
+                        getGift(id);
+                        break;
+                }
                 break;
             case KeyEvent.KEYCODE_HOME://房子
                 Log.e("jamie", "－－－－－房子－－－－－");
