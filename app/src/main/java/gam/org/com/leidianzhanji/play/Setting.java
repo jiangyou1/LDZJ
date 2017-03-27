@@ -59,52 +59,51 @@ public class Setting {
         Tools.paintM2Image(g, im, 760, 550, paint);
         Tools.paintRotateImage(g, im, 950, 550, 180, 192, 172, paint);
 
-        g.drawBitmap(bt, 853, 496, paint);
+        g.drawBitmap(bt, 863, 496, paint);
         if (isDownExit) {
-            g.drawBitmap(back1, 1116, 420, paint);
+            g.drawBitmap(back1, 1056, 420, paint);
         } else {
-            g.drawBitmap(back1, 1116, 420, paint);
+            g.drawBitmap(back1, 1056, 420, paint);
         }
 
         if (GameDraw.isSound == false) {
-            g.drawBitmap(an2, 1071, 618, paint);
-            g.drawBitmap(an1, 865, 618, paint);
+            g.drawBitmap(an2, 865, 618, paint);
+            g.drawBitmap(an1, 1041, 618, paint);
         } else {
+            g.drawBitmap(an2, 1041, 618, paint);
             g.drawBitmap(an1, 865, 618, paint);
-            g.drawBitmap(an2, 1071, 618, paint);
         }
 
         g.drawBitmap(sk, 803, 618, paint);
-        g.drawBitmap(sg, 1008, 618, paint);
+        g.drawBitmap(sg, 978, 618, paint);
     }
 
     public void upData() {
-
     }
 
     public void touchDown(float tx, float ty) {
-        if (ty > 618 && ty < 664 && tx > 865 && tx < 977) {// 开启声音
+        if (tx > 803 && ty > 600 && tx < 900 && ty < 680) {// 开启声音
             if (!GameDraw.isSound) {
                 GameDraw.isSound = true;
                 GameDraw.isPlayMusic(GameDraw.gameMediaPlayer,
                         GameDraw.bossMediaPlayer, GameDraw.menuMediaPlayer);
                 GameDraw.gameSound(1);
             }
-        } else if (ty > 618 && ty < 664 && tx > 280 && tx < 977) {// 关闭声音
+        } else if (tx > 978 && ty > 600 && tx < 1091 && ty < 680) {// 关闭声音
             GameDraw.gameSound(1);
             if (GameDraw.isSound) {
                 GameDraw.isSound = false;
                 GameDraw.isPlayMusic(GameDraw.gameMediaPlayer,
                         GameDraw.bossMediaPlayer, GameDraw.menuMediaPlayer);
             }
-        } else if (tx > 1116 && ty > 420 && tx < 1171 && ty < 465) {// 返回
+        } else if (tx > 1030 && ty > 400 && tx < 1191 && ty < 485) {// 返回
             GameDraw.gameSound(1);
             isDownExit = true;
         }
     }
 
     public void touchUp(float tx, float ty) {
-        if ((tx > 1116 && ty > 420 && tx < 1171 && ty < 465) && isDownExit) {// 返回
+        if ((tx > 1030 && ty > 400 && tx < 1191 && ty < 485) && isDownExit) {// 返回
             isDownExit = false;
             gameDraw.canvasIndex = GameDraw.CANVAS_MENU;
             Menu.index = Menu.NULL;
@@ -112,7 +111,7 @@ public class Setting {
     }
 
     public void touchMove(float tx, float ty) {
-        if (!(tx > 1116 && ty > 420 && tx < 1171 && ty < 465) && isDownExit) {// 返回
+        if (!(tx > 1030 && ty > 400 && tx < 1191 && ty < 485) && isDownExit) {// 返回
             isDownExit = false;
         }
     }
@@ -147,5 +146,4 @@ public class Setting {
                 break;
         }
     }
-
 }

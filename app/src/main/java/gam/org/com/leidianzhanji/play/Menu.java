@@ -267,8 +267,8 @@ public class Menu {
             case 6:// 状态的切换
                 if (time >= 0) {
                     g.drawBitmap(bg, 0, 0, paint);
-                    g.drawBitmap(gai2, 673,  - time * 50, paint);
-                    Tools.paintMImage(g, gai2, 969, - time * 50, paint);
+                    g.drawBitmap(gai2, 673, -time * 50, paint);
+                    Tools.paintMImage(g, gai2, 969, -time * 50, paint);
                     g.drawBitmap(bt1, 760, 98 - time * 50, paint);
                     g.drawBitmap(gai1, 510, -10 - time * 15, paint);
                     Tools.paintMImage(g, gai1, 950, -10 - time * 15, paint);
@@ -426,29 +426,29 @@ public class Menu {
     }
 
     public void touchDown(float tx, float ty) {
-        Log.i("Menu", "----------touchDown----------------");
+        Log.e("Menu", tx + "----------touchDown----------------" + ty);
         switch (mode) {
             case 5:
-                if (tx < 103 && ty > 696) {// 成就
+                if (tx < 660 && ty > 900) {// 成就
                     isDownAchieve = true;
                     GameDraw.gameSound(1);
-                } else if (tx > 378 && ty > 696) {// 声音设置
+                } else if (tx > 1230 && ty > 900) {// 声音设置
                     isDownSetting = true;
                     GameDraw.gameSound(1);
                 } else if (tx == -100 && ty == -100) {// 退出游戏
                     isDownExit = true;
                     GameDraw.gameSound(1);
                     touchUp(-100, -100);
-                } else if (tx > 170 && tx < 310 && ty > 635 && ty < 780) {// 开始
+                } else if (tx > 660 && tx < 1230 && ty > 900) {// 开始
                     isDownStart = true;
                     GameDraw.gameSound(1);
-                } else if (ty > 300 && ty < 377 && tx > 45 && tx < 435) {// 挑战BOSS
+                } else if (ty > 355 && ty < 500 && tx > 680 && tx < 1250) {// 挑战BOSS
                     isDownBoss = true;
                     GameDraw.gameSound(1);
-                } else if (ty > 400 && ty < 477 && tx > 45 && tx < 435) {// 战机升级
+                } else if (ty > 500 && ty < 650 && tx > 680 && tx < 1250) {// 战机升级
                     isDownUpgrade = true;
                     GameDraw.gameSound(1);
-                } else if (ty > 500 && ty < 577 && tx > 45 && tx < 435) {// 帮助
+                } else if (ty > 650 && ty < 700 && tx > 680 && tx < 1250) {// 帮助
                     isDownHelp = true;
                     GameDraw.gameSound(1);
                 }
@@ -459,12 +459,12 @@ public class Menu {
         Log.i("Menu", "----------touchUp----------------");
         switch (mode) {
             case 5:
-                if ((tx < 103 && ty > 696) && isDownAchieve) {// 成就
+                if ((tx < 660 && ty > 900) && isDownAchieve) {// 成就
                     isDownAchieve = false;
                     index = ACHIEVE;
                     mode = 6;
                     time = -1;
-                } else if ((tx > 378 && ty > 696) && isDownSetting) {// 声音设置
+                } else if ((tx > 1230 && ty > 900) && isDownSetting) {// 声音设置
                     isDownSetting = false;
                     index = SETTING;
                 } else if (tx == -100 && ty == -100) {// 退出游戏
@@ -472,14 +472,14 @@ public class Menu {
                         index = EXIT_GAME;
                         isDownExit = false;
                     }
-                } else if ((tx > 170 && tx < 310 && ty > 635 && ty < 780)
+                } else if ((tx > 660 && tx < 1230 && ty > 900)
                         && isDownStart) {// 开始
                     isDownStart = false;
                     isLevelOrBoss = 1;
                     index = PLAYGAME;
                     mode = 6;
                     time = -1;
-                } else if (ty > 300 && ty < 377 && tx > 45 && tx < 435) {// 挑战BOSS
+                } else if (ty > 355 && ty < 500 && tx > 680 && tx < 1250) {// 挑战BOSS
                     if (s[0] && isDownBoss) {
                         isDownBoss = false;
                         isLevelOrBoss = 2;
@@ -490,7 +490,7 @@ public class Menu {
                         gameDraw.smallDialog.reset(1, 240, 380, 10);
                     }
                     isDownBoss = false;
-                } else if (ty > 400 && ty < 477 && tx > 45 && tx < 435) {// 战机升级
+                } else if (ty > 500 && ty < 650 && tx > 680 && tx < 1250) {// 战机升级
                     if (s[1] && isDownUpgrade) {
                         isDownUpgrade = false;
                         index = UPGRADE;
@@ -500,7 +500,7 @@ public class Menu {
                         gameDraw.smallDialog.reset(1, 240, 380, 10);
                     }
                     isDownUpgrade = false;
-                } else if ((ty > 500 && ty < 577 && tx > 45 && tx < 435)
+                } else if ((ty > 650 && ty < 700 && tx > 680 && tx < 1250)
                         && isDownHelp) {// 帮助
                     isDownHelp = false;
                     index = HELP;
@@ -515,25 +515,24 @@ public class Menu {
         Log.i("Menu", "----------touchMove----------------");
         switch (mode) {
             case 5:
-                if (!(tx < 103 && ty > 696) && isDownAchieve) {// 成就
+                if (!(tx < 660 && ty > 900) && isDownAchieve) {// 成就
                     isDownAchieve = false;
-                } else if (!(tx > 378 && ty > 696) && isDownSetting) {// 声音设置
+                } else if (!(tx > 1230 && ty > 900) && isDownSetting) {// 声音设置
                     isDownSetting = false;
-                } else if (!(tx > 170 && tx < 310 && ty > 635 && ty < 780)
+                } else if (!(tx > 660 && tx < 1230 && ty > 900)
                         && isDownStart) {// 开始
                     isDownStart = false;
-                } else if (!(ty > 300 && ty < 377 && tx > 45 && tx < 435)
+                } else if (!(ty > 355 && ty < 500 && tx > 680 && tx < 1250)
                         && isDownBoss) {// 挑战BOSS
                     isDownBoss = false;
                     isDownBoss = false;
-                } else if (!(ty > 400 && ty < 477 && tx > 45 && tx < 435)
+                } else if (!(ty > 500 && ty < 650 && tx > 680 && tx < 1250)
                         && isDownUpgrade) {// 战机升级
                     isDownUpgrade = false;
                     isDownUpgrade = false;
-                } else if (!(ty > 500 && ty < 577 && tx > 45 && tx < 435)
+                } else if (!(ty > 650 && ty < 700 && tx > 680 && tx < 1250)
                         && isDownHelp) {// 帮助
                     isDownHelp = false;
-
                 }
         }
     }
